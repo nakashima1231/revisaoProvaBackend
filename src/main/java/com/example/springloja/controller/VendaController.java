@@ -58,7 +58,7 @@ public class VendaController {
     }
 
     @GetMapping("filtro-data")
-    public List<VendaDTO> buscarPorData(@PathVariable LocalDate data) {
+    public List<VendaDTO> buscarPorData(@RequestParam LocalDate data) {
         return service.buscarPorData(data);
     }
 

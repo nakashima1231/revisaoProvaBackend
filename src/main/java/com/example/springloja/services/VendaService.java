@@ -45,11 +45,11 @@ public class VendaService {
     }
 
     public List<VendaDTO> buscarPorCliente(Cliente cliente) {
-        return repository.findByCliente_nomeIgnoringCase(cliente).stream().map(VendaDTO::new).toList();
+        return repository.findByCliente_nomeIgnoringCase(cliente.getNome()).stream().map(VendaDTO::new).toList();
     }
 
     public List<VendaDTO> buscarPorVendedor(Vendedor vendedor) {
-        return repository.findByVendedor_NomeIgnoringCase(vendedor).stream().map(VendaDTO::new).toList();
+        return repository.findByVendedor_NomeIgnoringCase(vendedor.getNome()).stream().map(VendaDTO::new).toList();
     }
 }
 
