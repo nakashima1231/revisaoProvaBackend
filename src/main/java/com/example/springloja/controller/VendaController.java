@@ -63,13 +63,13 @@ public class VendaController {
     }
 
     @GetMapping("filtro-cliente")
-    public List<VendaDTO> buscarPorCliente(@PathVariable Cliente cliente) {
-        return service.buscarPorCliente(cliente);
+    public List<VendaDTO> buscarPorCliente(@RequestParam String nome) {
+        return service.buscarPorCliente(nome);
     }
 
     @GetMapping("filtro-vendedor")
-    public List<VendaDTO> buscarPorCliente(@PathVariable Vendedor vendedor) {
-        return service.buscarPorVendedor(vendedor);
+    public List<VendaDTO> buscarPorCliente(@RequestParam String nome) {
+        return service.buscarPorVendedor(nome);
     }
 
 }

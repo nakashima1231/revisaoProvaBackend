@@ -5,6 +5,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,7 +22,7 @@ public class Cliente {
     private String nome;
 
     @Min(value = 0, message = "renda nao pode ser negativo")
-    @NotBlank(message = "renda nao pode estar vazia")
+    @NotNull(message = "renda nao pode estar vazia")
     @Schema(description = "renda do cliente", example = "2000,00")
     private Double renda;
 

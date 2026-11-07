@@ -17,7 +17,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.util.List;
 
 @RestController
-@RequestMapping("/Vendedors")
+@RequestMapping("/vendedors")
 @CrossOrigin
 @Tag(name="Vendedors", description = "Gerenciamento de estoque de Vendedors")
 public class VendedorController {

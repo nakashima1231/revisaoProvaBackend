@@ -44,12 +44,12 @@ public class VendaService {
         return repository.findByDataGreaterThan(data).stream().map(VendaDTO::new).toList();
     }
 
-    public List<VendaDTO> buscarPorCliente(Cliente cliente) {
-        return repository.findByCliente_nomeIgnoringCase(cliente.getNome()).stream().map(VendaDTO::new).toList();
+    public List<VendaDTO> buscarPorCliente(String nome) {
+        return repository.findByCliente_nomeIgnoringCase(nome).stream().map(VendaDTO::new).toList();
     }
 
-    public List<VendaDTO> buscarPorVendedor(Vendedor vendedor) {
-        return repository.findByVendedor_NomeIgnoringCase(vendedor.getNome()).stream().map(VendaDTO::new).toList();
+    public List<VendaDTO> buscarPorVendedor(String nome) {
+        return repository.findByVendedor_NomeIgnoringCase(nome).stream().map(VendaDTO::new).toList();
     }
 }
 
