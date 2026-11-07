@@ -68,7 +68,7 @@ public class VendaController {
     }
 
     @GetMapping("filtro-vendedor")
-    public List<VendaDTO> buscarPorCliente(@RequestParam String nome) {
+    public List<VendaDTO> buscarPorVendedor(@RequestParam String nome) {
         return service.buscarPorVendedor(nome);
     }
 

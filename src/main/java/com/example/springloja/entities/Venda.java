@@ -25,11 +25,11 @@ public class Venda {
     private Double valor;
 
     @ManyToOne
-    @NotBlank(message = "cliente nao pode estar vazio")
+    @NotNull(message = "cliente nao pode estar vazio")
     private Cliente cliente;
 
     @ManyToOne
-    @NotBlank(message = "vendedor nao pode estar vazio")
+    @NotNull(message = "vendedor nao pode estar vazio")
     private Vendedor vendedor;
 
     public Long getId() {
