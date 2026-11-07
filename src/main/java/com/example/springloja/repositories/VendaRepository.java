@@ -12,7 +12,7 @@ import java.util.List;
 
 @Repository
 public interface VendaRepository extends JpaRepository<Venda, Long> {
-    List<Venda> findByDataGreaterThan(LocalDate data);
+    List<Venda> findByData(LocalDate data);
     List<Venda> findByCliente_nomeIgnoringCase(String nome);
     List<Venda> findByVendedor_NomeIgnoringCase(String nome);
 }

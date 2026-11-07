@@ -41,7 +41,7 @@ public class VendaService {
     }
 
     public List<VendaDTO> buscarPorData(LocalDate data) {
-        return repository.findByDataGreaterThan(data).stream().map(VendaDTO::new).toList();
+        return repository.findByData(data).stream().map(VendaDTO::new).toList();
     }
 
     public List<VendaDTO> buscarPorCliente(String nome) {
