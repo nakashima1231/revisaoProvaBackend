@@ -30,7 +30,7 @@ public class VendedorService {
     }
 
     @Transactional
-    public Vendedor atualizar(Long id, Vendedor dadosAtualizados, MultipartFile novaFoto, MultipartFile novoManual) {
+    public Vendedor atualizar(Long id, Vendedor dadosAtualizados, MultipartFile novaFoto) {
         Vendedor VendedorExistente = repository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Vendedor não encontrado com id: " + id));
 

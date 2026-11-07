@@ -16,7 +16,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 @RestController
-@RequestMapping("/Vendas")
+@RequestMapping("/vendas")
 @CrossOrigin
 public class VendaController {
     @Autowired
