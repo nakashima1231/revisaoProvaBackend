@@ -52,11 +52,10 @@ public class VendedorController {
     @SecurityRequirement(name = "bearerAuth")
     public String atualizar(
             @PathVariable Long id,
-            @Valid @RequestPart("Vendedor") Vendedor Vendedor,
-            @RequestPart(value = "foto", required = false) MultipartFile foto,
-            @RequestPart(value = "manual", required = false) MultipartFile manual) {
+            @Valid @RequestPart("vendedor") Vendedor Vendedor,
+            @RequestPart(value = "foto", required = false) MultipartFile foto) {
 
-        service.atualizar(id, Vendedor, foto, manual);
+        service.atualizar(id, Vendedor, foto);
         return "Vendedor atualizado com sucesso!";
     }
 

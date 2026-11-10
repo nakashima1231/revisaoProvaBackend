@@ -13,6 +13,6 @@ import java.util.List;
 @Repository
 public interface VendaRepository extends JpaRepository<Venda, Long> {
     List<Venda> findByData(LocalDate data);
-    List<Venda> findByCliente_nomeIgnoringCase(String nome);
-    List<Venda> findByVendedor_NomeIgnoringCase(String nome);
+    List<Venda> findByCliente_nomeIgnoreCase(String nome);
+    List<Venda> findByVendedor_NomeIgnoreCase(String nome);
 }

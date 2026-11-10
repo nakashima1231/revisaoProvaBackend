@@ -17,6 +17,7 @@ public class Venda {
     private Long id;
 
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+    @NotNull(message = "A data é obrigatória")
     private LocalDate data;
 
     @Min(value = 0, message = "valor nao pode ser negativo")

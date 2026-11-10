@@ -11,7 +11,9 @@ public record ProdutoDTO(
         String nomeCategoria
 ) {
     public ProdutoDTO(Produto p){
-        this(p.getId(), p.getNome(), p.getPreco(), p.getFoto(), p.getManual(), p.getCategoria().getNome());
+        this(p.getId(), p.getNome(), p.getPreco(), p.getFoto(), p.getManual(), p.getCategoria() != null
+                ? p.getCategoria().getNome()
+                : null);
     }
 }
 

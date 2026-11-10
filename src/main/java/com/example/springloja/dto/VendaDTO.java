@@ -10,11 +10,11 @@ public record VendaDTO(
         Long id,
         LocalDate data,
         Double valor,
-        Cliente cliente,
-        Vendedor vendedor
+        ClienteDTO cliente,
+        VendedorDTO vendedor
 ) {
     public VendaDTO(Venda v) {
-        this(v.getId(), v.getData(), v.getValor(), v.getCliente(), v.getVendedor());
+        this(v.getId(), v.getData(), v.getValor(), new ClienteDTO(v.getCliente()), new VendedorDTO(v.getVendedor()));
     }
 
 }

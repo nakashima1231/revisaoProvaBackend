@@ -36,8 +36,8 @@ public class VendaService {
         repository.deleteById(id);
     }
 
-    public Venda buscarPorId(Long id){
-        return repository.findById(id).orElse(null);
+    public VendaDTO buscarPorId(Long id){
+        return repository.findById(id).map(VendaDTO:: new).orElse(null);
     }
 
     public List<VendaDTO> buscarPorData(LocalDate data) {
@@ -45,11 +45,11 @@ public class VendaService {
     }
 
     public List<VendaDTO> buscarPorCliente(String nome) {
-        return repository.findByCliente_nomeIgnoringCase(nome).stream().map(VendaDTO::new).toList();
+        return repository.findByCliente_nomeIgnoreCase(nome).stream().map(VendaDTO::new).toList();
     }
 
     public List<VendaDTO> buscarPorVendedor(String nome) {
-        return repository.findByVendedor_NomeIgnoringCase(nome).stream().map(VendaDTO::new).toList();
+        return repository.findByVendedor_NomeIgnoreCase(nome).stream().map(VendaDTO::new).toList();
     }
 }
 
