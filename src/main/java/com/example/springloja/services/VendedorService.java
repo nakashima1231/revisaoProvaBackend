@@ -1,8 +1,6 @@
 package com.example.springloja.services;
 
 import com.example.springloja.dto.VendedorDTO;
-import com.example.springloja.dto.VendedorDTO;
-import com.example.springloja.entities.Vendedor;
 import com.example.springloja.entities.Vendedor;
 import com.example.springloja.repositories.VendedorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -54,7 +52,9 @@ public class VendedorService {
     }
 
     public VendedorDTO buscarPorId(Long id){
-        return repository.findById(id).stream().map(VendedorDTO::new).findFirst().orElse(null);
+        return repository.findById(id)
+                .map(VendedorDTO::new)
+                .orElse(null);
     }
 
     public List<VendedorDTO> buscarPorNome(String nome) {

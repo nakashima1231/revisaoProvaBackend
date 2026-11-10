@@ -35,9 +35,8 @@ public class VendedorController {
 
     @PostMapping(consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     @SecurityRequirement(name = "bearerAuth")
-    public String criar(@Valid @RequestPart("Vendedor") Vendedor Vendedor,
-                        @RequestPart(value = "foto", required = false) MultipartFile foto,
-                        @RequestPart(value = "manual", required = false) MultipartFile manual) {
+    public String criar(@Valid @RequestPart("vendedor") Vendedor Vendedor,
+                        @RequestPart(value = "foto", required = false) MultipartFile foto) {
 
         if (foto != null && !foto.isEmpty()) {
             String caminho = storageService.salvarArquivo(foto);

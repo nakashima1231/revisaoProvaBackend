@@ -34,9 +34,11 @@ public class VendaController {
     }
 
     @PutMapping("/{id}")
-    public String atualizar(@PathVariable Long id,@Valid @RequestBody Venda Venda){
-        Venda.setId(id);
-        service.atualizar(Venda);
+    public String atualizar(
+            @PathVariable Long id,
+            @Valid @RequestBody Venda venda) {
+
+        service.atualizar(id, venda);
         return "Venda atualizada com sucesso!";
     }
 
@@ -47,8 +49,8 @@ public class VendaController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Venda> buscarPorId(@PathVariable Long id){
-        Venda obj = service.buscarPorId(id);
+    public ResponseEntity<VendaDTO> buscarPorId(@PathVariable Long id){
+        VendaDTO obj = service.buscarPorId(id);
 
         if (obj != null){
             return ResponseEntity.ok().body(obj);

@@ -33,8 +33,8 @@ public class ClienteService {
     }
 
 
-    public Cliente buscarPorId(Long id){
-        return repository.findById(id).orElse(null);
+    public ClienteDTO buscarPorId(Long id){
+        return repository.findById(id).map(ClienteDTO:: new).orElse(null);
     }
 
     public List<ClienteDTO> buscarPorNome(String nome) {

@@ -28,8 +28,17 @@ public class VendaService {
         repository.save(Venda);
     }
 
-    public void atualizar(Venda Venda){
-        repository.save(Venda);
+    public void atualizar(Long id, Venda dados) {
+        Venda existente = repository.findById(id)
+                .orElseThrow(() ->
+                        new RuntimeException("Venda não encontrada"));
+
+        existente.setData(dados.getData());
+        existente.setValor(dados.getValor());
+        existente.setCliente(dados.getCliente());
+        existente.setVendedor(dados.getVendedor());
+
+        repository.save(existente);
     }
 
     public void excluir(Long id){
